@@ -89,6 +89,7 @@ jobs:
           EXPLORER_IMAGE: ${{ steps.images.outputs.explorer_image }}
           FABRIC_X_BIN: ${{ github.workspace }}/integration/test/.build/fabric-x/bin
           SKIP_CLEANUP_PROMPT: "1"
+          ENABLE_EXPLORER: "false"
         run: ./integration/test/run-e2e.sh
 
       # Failure logs are emitted by run-e2e.sh via an ERR trap before cleanup.

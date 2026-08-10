@@ -248,7 +248,10 @@ checkout_source "${EXPLORER_REPO}" "${EXPLORER_REF}" "${EXPLORER_DIR}" "${EXPLOR
 
 EXPLORER_IMAGE="localhost/${EXPLORER_IMAGE_NAME}:${EXPLORER_REF}"
 echo "Building ${EXPLORER_IMAGE_NAME} image from ${EXPLORER_DIR}..."
-docker build -t "${EXPLORER_IMAGE}" "${EXPLORER_DIR}"
+docker build -t "${EXPLORER_IMAGE}" "${EXPLORER_DIR}" || {
+  echo "WARNING: ${EXPLORER_IMAGE_NAME} image build failed, continuing without it (setting ENABLE_EXPLORER=false)"
+  export ENABLE_EXPLORER=false
+}
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Summary
