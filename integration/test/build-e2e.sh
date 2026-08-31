@@ -243,7 +243,7 @@ docker build \
 # docker.io/hyperledger/. run-e2e.sh resolves the same localhost/ tag from
 # refs.conf, so no registry pull is needed.
 # ──────────────────────────────────────────────────────────────────────────────
-EXPLORER_DIR="${BUILD_DIR}/fabric-x-block-explorer"
+EXPLORER_DIR="${BUILD_DIR}/fabric-x-block-explorer/docker/images/release"
 checkout_source "${EXPLORER_REPO}" "${EXPLORER_REF}" "${EXPLORER_DIR}" "${EXPLORER_LOCAL_PATH:-}" "fabric-x-block-explorer"
 
 EXPLORER_IMAGE="localhost/${EXPLORER_IMAGE_NAME}:${EXPLORER_REF}"
