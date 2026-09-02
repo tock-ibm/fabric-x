@@ -13,6 +13,9 @@
 name: Reconfig App Org Integration Test
 
 on:
+  push:
+   branches:
+   - reconfig_app_org
   workflow_dispatch:
     inputs:
       fabric-x-ref:
